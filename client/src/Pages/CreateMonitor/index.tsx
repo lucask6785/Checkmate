@@ -807,11 +807,17 @@ const CreateMonitorPage = () => {
 								<TextField
 									{...field}
 									type="number"
-									fieldLabel={t("pages.createMonitor.form.escalations.option.delay.label")}
-									placeholder={t("pages.createMonitor.form.escalations.option.delay.placeholder")}
+									fieldLabel={t(
+										"pages.createMonitor.form.escalations.option.delay.label"
+									)}
+									placeholder={t(
+										"pages.createMonitor.form.escalations.option.delay.placeholder"
+									)}
 									value={field.value ?? 0}
 									onChange={(e) => field.onChange(parseInt(e.target.value) || 0)}
-									helperText={t("pages.createMonitor.form.escalations.option.delay.helper")}
+									helperText={t(
+										"pages.createMonitor.form.escalations.option.delay.helper"
+									)}
 								/>
 							)}
 						/>
@@ -824,9 +830,10 @@ const CreateMonitorPage = () => {
 									...n,
 									name: n.notificationName,
 								}));
-								const selectedEscalationNotifications = escalationNotificationOptions.filter((n) =>
-									(field.value ?? []).includes(n.id)
-								);
+								const selectedEscalationNotifications =
+									escalationNotificationOptions.filter((n) =>
+										(field.value ?? []).includes(n.id)
+									);
 								return (
 									<Stack spacing={theme.spacing(LAYOUT.MD)}>
 										<Autocomplete
@@ -834,11 +841,16 @@ const CreateMonitorPage = () => {
 											options={escalationNotificationOptions}
 											value={selectedEscalationNotifications}
 											getOptionLabel={(option) => option.name}
-											onChange={(_: unknown, newValue: typeof escalationNotificationOptions) => {
+											onChange={(
+												_: unknown,
+												newValue: typeof escalationNotificationOptions
+											) => {
 												field.onChange(newValue.map((n) => n.id));
 											}}
 											isOptionEqualToValue={(option, value) => option.id === value.id}
-											fieldLabel={t("pages.createMonitor.form.escalations.option.notifications.label")}
+											fieldLabel={t(
+												"pages.createMonitor.form.escalations.option.notifications.label"
+											)}
 										/>
 										{selectedEscalationNotifications.length > 0 && (
 											<Stack
@@ -868,7 +880,9 @@ const CreateMonitorPage = () => {
 														>
 															<Trash2 size={16} />
 														</IconButton>
-														{index < selectedEscalationNotifications.length - 1 && <Divider />}
+														{index < selectedEscalationNotifications.length - 1 && (
+															<Divider />
+														)}
 													</Stack>
 												))}
 											</Stack>

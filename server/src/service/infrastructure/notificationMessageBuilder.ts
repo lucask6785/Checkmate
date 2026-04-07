@@ -59,12 +59,7 @@ export class NotificationMessageBuilder implements INotificationMessageBuilder {
 		const content: NotificationContent = {
 			title: `🚨 ESCALATION: ${monitor.name} is still DOWN`,
 			summary: `Monitor "${monitor.name}" has been down for an extended period and requires immediate attention.`,
-			details: [
-				`Monitor URL: ${monitor.url}`,
-				`Monitor Type: ${monitor.type}`,
-				`Status: ${monitor.status}`,
-				`Team: ${monitor.teamId}`,
-			],
+			details: [`Monitor URL: ${monitor.url}`, `Monitor Type: ${monitor.type}`, `Status: ${monitor.status}`, `Team: ${monitor.teamId}`],
 			timestamp: new Date(),
 		};
 
